@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barunah</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-weight: normal;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        #image-placeholder {
+            width: 80%;
+            height: 300px;
+            background-color: #2b2b2b;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+            color: #666;
+        }
+
+        .ads-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            width: 80%;
+        }
+
+        .ad-placeholder {
+            width: 100%;
+            padding-bottom: 25%;
+            background-color: #fff;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #666;
+            position: relative;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .ad-placeholder:hover {
+            background-color: #bbb;
+        }
+
+        #search-container {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 250px;
+            border: 1px solid #333;
+            border-radius: 25px;
+            outline: none;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 25px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            outline: none;
+            margin-left: 10px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            width: 100%;
+            color: #888;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!--
+        <h1>Barunah</h1>
+        -->
+    </header>
+
+    <div id="image-placeholder">
+        <img src="barunahlogo.jpg" alt="Barunah Logo" style="width:200px;height:200px;">
+    </div>
+
+    <div class="ads-container">
+	<!-- 
+        <div class="ad-placeholder" onclick="window.location.href='https://example.com/item1'">Ad 1 Placeholder</div>
+        <div class="ad-placeholder" onclick="window.location.href='https://example.com/item2'">Ad 2 Placeholder</div>
+        <div class="ad-placeholder" onclick="window.location.href='https://example.com/item3'">Ad 3 Placeholder</div>
+        <div class="ad-placeholder" onclick="window.location.href='https://example.com/item4'">Ad 4 Placeholder</div>
+	-->
+        <div class="ad-placeholder" onclick="window.location.href='https://example.com/item1'"><img src="rumah.jpg" alt="Barunah Logo" style="width:300px;height:200px;"><br> <h2>test</h2><br></div>
+        <div class="ad-placeholder" onclick="window.location.href='https://example.com/item2'"><img src="car.jpg" alt="Barunah Logo" style="width:300px;height:200px;"></div>
+        <div class="ad-placeholder" onclick="window.location.href='https://example.com/item3'"><img src="travel.jpg" alt="Barunah Logo" style="width:300px;height:200px;"></div>
+        <div class="ad-placeholder" onclick="window.location.href='https://example.com/item4'"><img src="money.jpg" alt="Barunah Logo" style="width:300px;height:200px;"></div>
+    </div>
+	
+
+    <div id="search-container">
+        <input type="text" id="searchQuery" placeholder="Search ads...">
+        <button onclick="performSearch()">Search</button>
+    </div>
+
+    <footer>
+        <p>&copy; Barunah 2024</p>
+    </footer>
+
+    <script>
+		 
+		 const pages = {
+            "ad 1": "https://example.com/item1",
+            "ad 2": "https://example.com/item2",
+            "ad 3": "https://example.com/item3",
+            "ad 4": "https://example.com/item4"
+        };
+		
+
+        function performSearch() {
+            const query = document.getElementById('searchQuery').value.toLowerCase();
+            if (pages[query]) {
+                window.location.href = pages[query];
+            } else {
+                alert("No results found.");
+            }
+        }
+    </script>
+
+</body>
+</html>
